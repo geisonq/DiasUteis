@@ -1,7 +1,3 @@
--- Schema para o projeto DiasUteis (MySQL)
--- Execute este script no MySQL antes de rodar a aplicação.
--- Conexão configurada em exemplo.diasuteis.factory.FactoryConnector:
---   jdbc:mysql://localhost:3306/diasuteis  usuario=root  senha=(vazia)
 
 CREATE DATABASE IF NOT EXISTS diasuteis CHARACTER SET utf8mb4;
 USE diasuteis;
