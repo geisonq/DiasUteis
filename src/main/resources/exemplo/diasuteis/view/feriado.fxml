@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="exemplo.diasuteis.view.FeriadoController">
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+   <children>
+      <Label style="-fx-font-size: 18px;" text="Cadastro de Feriados" />
+
+      <TableView fx:id="tblFeriado" prefHeight="220.0">
+         <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="60.0" text="Código" />
+            <TableColumn fx:id="colDia" prefWidth="120.0" text="Dia" />
+            <TableColumn fx:id="colDescricao" prefWidth="280.0" text="Descrição" />
+            <TableColumn fx:id="colTipo" prefWidth="120.0" text="Tipo" />
+         </columns>
+      </TableView>
+
+      <GridPane hgap="10.0" vgap="8.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="70.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="NEVER" minWidth="60.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="150.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+         <children>
+            <Label text="Dia" />
+            <DatePicker fx:id="dtFeriado" GridPane.columnIndex="1" />
+            <Label text="Tipo" GridPane.columnIndex="2" />
+            <ComboBox fx:id="cmbTipoFeriado" prefWidth="150.0" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+      <Label text="Descrição" />
+      <TextField fx:id="txtDescricao" />
+
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <Button fx:id="btnNovo" onAction="#btnNovoAction" text="Novo" />
+            <Button fx:id="btnDeletar" onAction="#btnDeletarAction" text="Deletar" />
+            <Button fx:id="btnSalvar" onAction="#btnSalvarAction" text="Salvar" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

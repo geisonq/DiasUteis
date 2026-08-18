@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="exemplo.diasuteis.view.DiasUteisController">
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+   <children>
+      <Label style="-fx-font-size: 18px;" text="Cálculo de Dias Úteis" />
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Data Inicial" />
+            <DatePicker fx:id="dtInicial" />
+            <Label text="Data Final" />
+            <DatePicker fx:id="dtFinal" />
+            <Button fx:id="btnCalcular" onAction="#btnCalcularAction" text="Calcular" />
+            <Label text="Total de dias úteis:" />
+            <Label fx:id="lblDias" style="-fx-font-weight: bold;" text="--" />
+         </children>
+      </HBox>
+
+      <Separator />
+
+      <Label text="Feriados considerados no cálculo (cadastre novos em Menu &gt; Feriados):" />
+      <TableView fx:id="tblFeriado" prefHeight="200.0">
+         <columns>
+            <TableColumn fx:id="colDia" prefWidth="150.0" text="Dia" />
+            <TableColumn fx:id="colDescricao" prefWidth="300.0" text="Descrição" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>
